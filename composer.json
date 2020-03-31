@@ -1,0 +1,54 @@
+{
+    "name": "riclep/core",
+    "description": "Core files for BWI websites",
+    "keywords": [
+        "riclep",
+        "core"
+    ],
+    "homepage": "https://github.com/riclep/core",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ric Le Poidevin",
+            "email": "ric@wearebwi.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Riclep\\Core\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Riclep\\Core\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Riclep\\Core\\CoreServiceProvider"
+            ],
+            "aliases": {
+                "Core": "Riclep\\Core\\CoreFacade"
+            }
+        }
+    }
+}
