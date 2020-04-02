@@ -3,6 +3,7 @@
 namespace Riclep\Core;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Ui\UiCommand;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -11,6 +12,11 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+    	UiCommand::macro('core', function($command) {
+    		Core::install();
+			$command->info('Core files installed');
+		});
+
         /*
          * Optional methods to load your package assets
          */
@@ -49,12 +55,12 @@ class CoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Automatically apply the package configuration
+      /*  // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'core');
 
         // Register the main class to use with the facade
         $this->app->singleton('core', function () {
             return new Core;
-        });
+        });*/
     }
 }
