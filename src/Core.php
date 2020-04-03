@@ -44,6 +44,7 @@ class Core extends Preset
 	{
 		return [
 			'axios' => '^0.19',
+			'babel-polyfill' => '^6.26.0',
 			'browser-sync' => '^2.26',
 			'browser-sync-webpack-plugin' => '^2.2',
 			'cross-env' => '^7.0',
