@@ -1,0 +1,4 @@
+name: *|NAME|*
+recipe: laravel
+config:
+  webroot: public

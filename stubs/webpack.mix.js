@@ -1,34 +1,16 @@
 const mix = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
 require('laravel-mix-bundle-analyzer');
 
-// Custom PurgeCSS extractor for Tailwind that allows special characters in
-// class names.
-//
-// https://github.com/FullHuman/purgecss#extractor
-class TailwindExtractor {
+class PurgeCssExtractor {
 	static extract(content) {
 		return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
 	}
 }
 
-
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
-
-mix.js('resources/js/app.js', 'public/js').sass('resources/sass/app.scss', 'public/css').options({
+Mix.js('resources/js/app.js', 'public/js').sass('resources/sass/app.scss', 'public/css').options({
 	processCssUrls: false,
-	postCss: [ tailwindcss('./tailwind.config.js') ],
 	autoprefixer: {
 		options: {
 
@@ -37,14 +19,11 @@ mix.js('resources/js/app.js', 'public/js').sass('resources/sass/app.scss', 'publ
 });
 
 mix.browserSync({
-	proxy: 'https://iod.lndo.site'
+	proxy: 'https://*|NAME|*.lndo.site'
 });
 
-
-
 // Only run PurgeCSS during production builds for faster development builds
-// and so you still have the full set of utilities available during
-// development.
+// and so you still have the full set of utilities available during development.
 if (mix.inProduction()) {
 	mix.version();
 	mix.bundleAnalyzer();
@@ -61,7 +40,7 @@ if (mix.inProduction()) {
 				]),
 				extractors: [
 					{
-						extractor: TailwindExtractor,
+						extractor: PurgeCssExtractor,
 
 						// Specify the file extensions to include when scanning for
 						// class names.

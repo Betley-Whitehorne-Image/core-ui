@@ -18,6 +18,7 @@ class Core extends Preset
 	{
 		static::cleanDirectories();
 		static::updatePackages();
+		static::setupLando();
 		static::updateMix();
 		static::copyResources();
 		static::removeNodeModules();
@@ -49,10 +50,8 @@ class Core extends Preset
 			'glob-all' => '^3.1.0',
 			'laravel-mix' => '^5.0.1',
 			'laravel-mix-bundle-analyzer' => '^1.0.5',
-			'lodash' => '^4.17.13',
 			'purgecss' => '^1.4.2',
 			'purgecss-webpack-plugin' => '^1.6',
-			'resolve-url-loader' => '^3.1.0',
 			'sass' => '^1.20.1',
 			'sass-loader' => '^8.0.0',
 			'vue' => '^2.5.17',
@@ -61,11 +60,21 @@ class Core extends Preset
 	}
 
 	/**
+	 * Creates the basic Lando file
+	 */
+	public static function setupLando() {
+		copy(__DIR__ . '/../stubs/.lando.yml', base_path('.lando.yml'));
+		$lando = file_get_contents(base_path('.lando.yml'));
+		file_put_contents('.lando.yml', str_replace('*|NAME|*', static::getFolderName(), $lando));
+	}
+
+	/**
 	 * Creates the basic mix file
 	 */
 	public static function updateMix() {
-		// TODO read lando to get url for browsersync
 		copy(__DIR__ . '/../stubs/webpack.mix.js', base_path('webpack.mix.js'));
+		$webpackMax = file_get_contents(base_path('webpack.mix.js'));
+		file_put_contents('webpack.mix.js', str_replace('*|NAME|*', static::getFolderName(), $webpackMax));
 	}
 
 	/**
@@ -73,5 +82,11 @@ class Core extends Preset
 	 */
 	public static function copyResources() {
 		File::copyDirectory(__DIR__ . '/../stubs/resources', resource_path());
+	}
+
+	private static function getFolderName() {
+
+
+		return explode('.', basename(base_path()))[0];
 	}
 }
