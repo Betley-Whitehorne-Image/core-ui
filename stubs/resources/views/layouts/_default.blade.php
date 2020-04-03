@@ -15,3 +15,13 @@
 	<meta name="twitter:title" content="">
 	<meta name="twitter:description" content="">
 @stop
+
+@section('body')
+	<div id="app">
+		@include('partials._header')
+
+		@yield('content')
+
+		@include('partials._footer')
+	</div>
+@endsection
