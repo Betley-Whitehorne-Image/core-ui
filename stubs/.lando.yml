@@ -2,3 +2,4 @@ name: *|NAME|*
 recipe: laravel
 config:
   webroot: public
+  php: '7.4'
