@@ -55,6 +55,9 @@ $widths: (
 );
 $percentage-width: 88%;
 
+// How much space should we leave above anchor links when scrolled to?
+$scroll-margin-top: 100px;
+
 ::selection {
 	background-color: #666;
 
