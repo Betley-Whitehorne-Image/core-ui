@@ -55,8 +55,8 @@ class Core extends Preset
 			'purgecss-webpack-plugin' => '^1.6',
 			'sass' => '^1.20.1',
 			'sass-loader' => '^8.0.0',
-			'vue' => '^2.5.17',
-			'vue-template-compiler' => '^2.6.10',
+			'vue' => '^2.6',
+			'vue-template-compiler' => '^2.6',
 		];
 	}
 
