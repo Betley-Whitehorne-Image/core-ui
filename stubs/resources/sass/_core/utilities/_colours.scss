@@ -28,7 +28,7 @@ Colours are defined in _settings.scss
 /* purgecss start ignore */
 .bgc {
 	@each $key, $value in $colours {
-		&-#{$key} {
+		&-#{"" + $key} {
 			background-color: map_get($colours, $key)
 		}
 	}
@@ -36,7 +36,7 @@ Colours are defined in _settings.scss
 
 .fgc {
 	@each $key, $value in $colours {
-		&-#{$key} {
+		&-#{"" + $key} {
 			color: map_get($colours, $key)
 		}
 	}
@@ -44,8 +44,16 @@ Colours are defined in _settings.scss
 
 .fill {
 	@each $key, $value in $colours {
-		&-#{$key} {
+		&-#{"" + $key} {
 			fill: map_get($colours, $key)
+		}
+	}
+}
+
+.stroke {
+	@each $key, $value in $colours {
+		&-#{"" + $key} {
+			stroke: map_get($colours, $key)
 		}
 	}
 }
