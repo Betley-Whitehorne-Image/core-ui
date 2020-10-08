@@ -51,4 +51,9 @@ if (mix.inProduction()) {
 			})
 		]
 	});
+	
+	let date = new Date();
+	console.log('Release version: ' + date.getFullYear() + '-' + pad(date.getMonth()) + '-' + pad(date.getDay()) + '-' + pad(date.getUTCHours()) + '-' + pad(date.getUTCMinutes()));
 }
+
+function pad(n){return n<10 ? '0'+n : n}
