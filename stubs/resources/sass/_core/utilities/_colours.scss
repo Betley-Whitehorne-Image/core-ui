@@ -40,6 +40,10 @@ Colours are defined in _settings.scss
 			color: map_get($colours, $key)
 		}
 	}
+
+	&-inherit {
+		color: inherit;
+	}
 }
 
 .fill {
