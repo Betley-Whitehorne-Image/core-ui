@@ -9,7 +9,7 @@ html {
 }
 
 b, strong {
-	font-weight: $font-1-bold;
+	font-weight: 600;
 }
 
 
@@ -22,7 +22,7 @@ Utilities
 	}
 
 	&-bold {
-		font-weight: $font-1-bold;
+		font-weight: 600;
 	}
 
 	&-uppercase {
@@ -31,6 +31,14 @@ Utilities
 
 	&-centred {
 		text-align: center;
+	}
+
+	&-left {
+		text-align: left;
+	}
+
+	&-right {
+		text-align: right;
 	}
 
 	&-underline {
