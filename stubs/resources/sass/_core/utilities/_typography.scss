@@ -45,6 +45,10 @@ Utilities
 		text-decoration: underline;
 	}
 
+	&-no-underline {
+		text-decoration: none;
+	}
+
 	&-leading-loose {
 		line-height: $leading-loose !important; // has to override scopes
 	}
