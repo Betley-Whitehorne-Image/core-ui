@@ -180,3 +180,11 @@ address {
 button:focus {
 	outline: 0;
 }
+
+
+
+// fixes massiiiiiive buttons on ddd()
+.sf-dump-search-wrapper svg {
+	height: 30px;
+	width: 30px;
+}
