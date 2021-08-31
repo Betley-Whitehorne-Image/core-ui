@@ -43,13 +43,13 @@ class Core extends Preset
 	protected static function updatePackageArray()
 	{
 		return [
-			'axios' => '^0.19',
+			'axios' => '^0.21',
 			'babel-polyfill' => '^6.26.0',
 			'browser-sync' => '^2.26',
 			'browser-sync-webpack-plugin' => '^2.2',
 			'cross-env' => '^7.0',
 			'glob-all' => '^3.1.0',
-			'laravel-mix' => '^5.0.1',
+			'laravel-mix' => '^6.0.6',
 			'laravel-mix-bundle-analyzer' => '^1.0.5',
 			'purgecss' => '^1.4.2',
 			'purgecss-webpack-plugin' => '^1.6',
