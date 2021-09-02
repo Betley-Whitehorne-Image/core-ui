@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
+let path = require('path');
 require('laravel-mix-bundle-analyzer');
 
 class PurgeCssExtractor {
