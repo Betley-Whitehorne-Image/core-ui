@@ -43,20 +43,22 @@ class Core extends Preset
 	protected static function updatePackageArray()
 	{
 		return [
-			'axios' => '^0.21',
+			'axios' => '^0.21.4',
 			'babel-polyfill' => '^6.26.0',
-			'browser-sync' => '^2.26',
-			'browser-sync-webpack-plugin' => '^2.2',
-			'cross-env' => '^7.0',
-			'glob-all' => '^3.1.0',
-			'laravel-mix' => '^6.0.6',
+			'browser-sync' => '^2.27.5',
+			'browser-sync-webpack-plugin' => '^2.3.0',
+			'cross-env' => '^7.0.3',
+			'glob-all' => '^3.2.1',
+			'laravel-mix' => '^6.0.31',
 			'laravel-mix-bundle-analyzer' => '^1.0.5',
-			'purgecss' => '^1.4.2',
-			'purgecss-webpack-plugin' => '^1.6',
-			'sass' => '^1.20.1',
-			'sass-loader' => '^8.0.0',
-			'vue' => '^2.6',
-			'vue-template-compiler' => '^2.6',
+			'laravel-mix-favicon' => '^0.3.1',
+			'purgecss' => '^4.0.3',
+			'purgecss-webpack-plugin' => '^4.0.3',
+			'sass' => '^1.41.0',
+			'sass-loader' => '^12.1.0',
+			'vue' => '^2.6.14',
+			'vue-loaded' => '^15.9.8',
+			'vue-template-compiler' => '^2.6.14',
 		];
 	}
 
