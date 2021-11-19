@@ -57,7 +57,7 @@ class Core extends Preset
 			'sass' => '^1.41.0',
 			'sass-loader' => '^12.1.0',
 			'vue' => '^2.6.14',
-			'vue-loaded' => '^15.9.8',
+			'vue-loader' => '^15.9.8',
 			'vue-template-compiler' => '^2.6.14',
 		];
 	}
