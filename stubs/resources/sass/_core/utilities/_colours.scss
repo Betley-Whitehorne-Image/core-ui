@@ -61,4 +61,10 @@ Colours are defined in _settings.scss
 		}
 	}
 }
+
+:root{
+	@each $key, $value in $colours {
+		--c-#{$key} : #{$value};
+	}
+}
 /* purgecss end ignore */

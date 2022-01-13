@@ -61,7 +61,7 @@
 		});
 
 		storyblok.on('published', function() {
-			axios.post('{{ route('clear-storyblok-cache') }}').then((response) => {
+			axios.post('{{ route('storyblok.clear-cache') }}').then((response) => {
 				console.log(response);
 			});
 		});

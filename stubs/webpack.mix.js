@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
+let path = require('path');
 require('laravel-mix-bundle-analyzer');
 require('laravel-mix-favicon');
 require('laravel-mix-stylelint');
@@ -35,9 +36,10 @@ mix.browserSync({
 // and so you still have the full set of utilities available during development.
 if (mix.inProduction()) {
 	mix.version();
+	mix.favicon();
 	mix.bundleAnalyzer();
 
-	mix.webpackConfig({
+	/*mix.webpackConfig({
 		plugins: [
 			new PurgecssPlugin({
 
@@ -59,8 +61,13 @@ if (mix.inProduction()) {
 				whitelistPatternsChildren: []
 			})
 		]
+<<<<<<< HEAD
 	});
 
+=======
+	});*/
+
+>>>>>>> 12c98fd6d9387546b1f40b7e19a20c24d5ec0866
 	let date = new Date();
 	console.log('Release version: ' + date.getFullYear() + '-' + pad(date.getMonth()) + '-' + pad(date.getDay()) + '-' + pad(date.getUTCHours()) + '-' + pad(date.getUTCMinutes()));
 }
