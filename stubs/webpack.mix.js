@@ -2,6 +2,8 @@ const mix = require('laravel-mix');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
 require('laravel-mix-bundle-analyzer');
+require('laravel-mix-favicon');
+require('laravel-mix-stylelint');
 
 class PurgeCssExtractor {
 	static extract(content) {
@@ -9,7 +11,14 @@ class PurgeCssExtractor {
 	}
 }
 
-mix.js('resources/js/app.js', 'public/js').sass('resources/sass/app.scss', 'public/css').options({
+mix.js('resources/js/app.js', 'public/js')
+	.vue()
+	.sass('resources/sass/app.scss', 'public/css')
+	.stylelint({
+		fix: true,
+		files: ['**/*.scss'],
+	})
+	.options({
 	processCssUrls: false,
 	autoprefixer: {
 		options: {
@@ -51,7 +60,7 @@ if (mix.inProduction()) {
 			})
 		]
 	});
-	
+
 	let date = new Date();
 	console.log('Release version: ' + date.getFullYear() + '-' + pad(date.getMonth()) + '-' + pad(date.getDay()) + '-' + pad(date.getUTCHours()) + '-' + pad(date.getUTCMinutes()));
 }
