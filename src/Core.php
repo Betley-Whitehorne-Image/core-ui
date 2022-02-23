@@ -18,7 +18,6 @@ class Core extends Preset
 	{
 		static::cleanDirectories();
 		static::updatePackages();
-		static::setupLando();
 		static::updateMix();
 		static::copyResources();
 		static::removeNodeModules();
