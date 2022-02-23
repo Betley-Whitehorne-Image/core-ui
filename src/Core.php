@@ -70,15 +70,6 @@ class Core extends Preset
 	}
 
 	/**
-	 * Creates the basic Lando file
-	 */
-	public static function setupLando() {
-		copy(__DIR__ . '/../stubs/.lando.yml', base_path('.lando.yml'));
-		$lando = file_get_contents(base_path('.lando.yml'));
-		file_put_contents('.lando.yml', str_replace('*|NAME|*', static::getFolderName(), $lando));
-	}
-
-	/**
 	 * Creates the basic mix file
 	 */
 	public static function updateMix() {
