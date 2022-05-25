@@ -7,6 +7,14 @@ module.exports = {
 		"order/properties-order": [
 			[
 				{
+					"groupName": "reset",
+					"emptyLineBefore": "always",
+					"noEmptyLineBetween": true,
+					"properties": [
+						"all"
+					]
+				},
+				{
 					"groupName": "heading",
 					"emptyLineBefore": "always",
 					"noEmptyLineBetween": true,
@@ -86,6 +94,7 @@ module.exports = {
 						"align-items",
 						"align-self",
 						"justify-content",
+						"justify-items",
 						"order"
 					]
 				},
@@ -160,8 +169,8 @@ module.exports = {
 						"background-clip",
 						"background-color",
 						"background-image",
-						"background-repeat",
 						"background-position",
+						"background-repeat",
 						"background-size",
 						"box-shadow",
 						"fill"
