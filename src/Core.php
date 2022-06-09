@@ -77,6 +77,8 @@ class Core extends Preset
 		file_put_contents('webpack.mix.js', str_replace('*|NAME|*', static::getFolderName(), $webpackMax));
 
 		copy(__DIR__ . '/../stubs/.stylelintrc.js', base_path('.stylelintrc.js'));
+
+		copy(__DIR__ . '/../stubs/realfavicongenerator-config.json', base_path('realfavicongenerator-config.json'));
 	}
 
 	/**
