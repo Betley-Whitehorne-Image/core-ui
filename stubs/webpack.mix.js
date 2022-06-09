@@ -34,7 +34,3 @@ if (mix.inProduction()) {
 	});
 	mix.bundleAnalyzer();
 }
-
-
-
-function pad(n){return n<10 ? '0'+n : n}
