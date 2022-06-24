@@ -1,0 +1,48 @@
+@mixin button-reset {
+    --button-padding: initial;
+    --button-border-radius: initial;
+
+    --button-bgc: initial;
+    --button-fgc: initial;
+    --button-border: initial;
+
+    --button-font-size: initial;
+
+    --button-hover-bgc: initial;
+    --button-hover-fgc: initial;
+    --button-hover-filter: initial;
+}
+
+body {
+    @extend .button--default;
+}
+
+.button {
+    display: inline-block;
+
+    padding: var(--button-padding);
+
+    background-color: var(--button-bgc);
+
+    border: var(--button-border);
+
+    border-radius: var(--button-border-radius);
+
+    color: var(--button-fgc);
+    font-size: var(--button-font-size);
+    text-decoration: none;
+
+    transition: all 0.1s linear;
+
+    &:hover {
+        background-color: var(--button-hover-bgc, var(--button-bgc));
+
+        color: var(--button-hover-fgc, var(--button-fgc));
+
+        filter: var(--button-hover-filter);
+    }
+}
+
+.button--default {
+    @include button-reset;
+}
