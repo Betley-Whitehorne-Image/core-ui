@@ -1,3 +1,4 @@
+//reset all button css variables
 @mixin button-reset {
     --button-padding: initial;
     --button-border-radius: initial;
@@ -7,12 +8,14 @@
     --button-border: initial;
 
     --button-font-size: initial;
+    --button-line-height: initial;
 
     --button-hover-bgc: initial;
     --button-hover-fgc: initial;
     --button-hover-filter: initial;
 }
 
+//Sets the default button class for the website
 body {
     @extend .button--default;
 }
@@ -30,19 +33,43 @@ body {
 
     color: var(--button-fgc);
     font-size: var(--button-font-size);
+    line-height: var(--button-line-height, 1);
     text-decoration: none;
 
     transition: all 0.1s linear;
 
-    &:hover {
-        background-color: var(--button-hover-bgc, var(--button-bgc));
+    &:not(:disabled) {
+        cursor: pointer;
 
-        color: var(--button-hover-fgc, var(--button-fgc));
+        &:hover {
+            background-color: var(--button-hover-bgc, var(--button-bgc));
 
-        filter: var(--button-hover-filter);
+            color: var(--button-hover-fgc, var(--button-fgc));
+
+            filter: var(--button-hover-filter);
+        }
+    }
+
+    &:disabled {
+        //opacity: 0.6;
     }
 }
 
+/*
+Button classes
+ */
 .button--default {
+    //include button-reset to avoid conflicts with default styles and button styles set in parents
     @include button-reset;
+
+    //example
+    --button-padding: 5px 10px;
+
+    --button-bgc: red;
+    --button-fgc: white;
+    --button-border: 2px solid white;
+
+    --button-font-size: 16px;
+
+    --button-hover-filter: brightness(0.8);
 }
